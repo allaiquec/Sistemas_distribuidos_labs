@@ -45,8 +45,8 @@ private int clock; //inicializacion de variable de tiempo lamport
      clock.update(receivedTime);
     }
   });
-  threads.add(thread);
-  thread.start();
+  threads.add(thread); //agregar el hilo a la lista
+  thread.start(); //inicia el hilo
  }
   //esperar a que todos los hilos terminen su ejecución
  for (Thread thread : threads) {
