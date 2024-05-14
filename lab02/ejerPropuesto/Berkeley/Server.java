@@ -33,7 +33,8 @@ public class Server extends Thread {
                 /** Cuando el servidor finalice, se debe restaurar el estado inicial **/
                 this.sm.restartProcess();
             } catch (InterruptedException e) {
-                // Maneja las excepciones de interrupción del hilo
+                System.err.println("El hilo del servidor fue interrumpido mientras dormía: " + e.getMessage());
+                Thread.currentThread().interrupt();
             }
         }
     }
