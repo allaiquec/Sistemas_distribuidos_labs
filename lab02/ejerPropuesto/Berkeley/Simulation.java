@@ -10,6 +10,5 @@ public class Simulation {
             clv[i] = new Client(i, sm); // Instancia de cliente
             clv[i].start(); // Inicia el cliente
         }
-
     }
 }
