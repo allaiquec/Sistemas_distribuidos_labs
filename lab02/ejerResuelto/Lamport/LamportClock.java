@@ -2,7 +2,7 @@ package Lamport;
 import java.util.ArrayList;
 import java.util.List;
 public class LamportClock {
-private int clock;
+private int clock; //variable que guardara el iempo de lamport
  //constructor que inicializa el reloj de lamport en cero
  public LamportClock() {
    this.clock = 0;
