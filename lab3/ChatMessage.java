@@ -1,27 +1,34 @@
 import java.io.*;
-/*
-* This class defines the different type of messages that will be exchanged between the
-* Clients and the Server.
-* When talking from a Java Client to a Java Server a lot easier to pass Java objects, no
-* need to count bytes or to wait for a line feed at the end of the frame
-*/
+
+// Esta clase define los diferentes tipos de mensajes que se intercambiarán entre los Clientes y el Servidor.
+// Al comunicarse entre un Cliente Java y un Servidor Java, es mucho más fácil pasar objetos Java, 
+// no es necesario contar bytes o esperar un salto de línea al final del marco.
 public class ChatMessage implements Serializable {
-// The different types of message sent by the Client
-// WHOISIN to receive the list of the users connected
-// MESSAGE an ordinary text message
-// LOGOUT to disconnect from the Server
-static final int WHOISIN = 0, MESSAGE = 1, LOGOUT = 2;
-private int type;
-private String message;
-// constructor
-ChatMessage(int type, String message) {
-this.type = type;
-this.message = message;
-}
-int getType() {
-return type;
-}
-String getMessage() {
-return message;
-}
+
+    // Los diferentes tipos de mensajes enviados por el Cliente:
+    // WHOISIN para recibir la lista de usuarios conectados
+    // MESSAGE un mensaje de texto ordinario
+    // LOGOUT para desconectarse del Servidor
+    static final int WHOISIN = 0, MESSAGE = 1, LOGOUT = 2;
+    
+    // Tipo de mensaje
+    private int type;
+    // Contenido del mensaje
+    private String message;
+    
+    // Constructor
+    ChatMessage(int type, String message) {
+        this.type = type;
+        this.message = message;
+    }
+    
+    // Obtener el tipo de mensaje
+    int getType() {
+        return type;
+    }
+    
+    // Obtener el contenido del mensaje
+    String getMessage() {
+        return message;
+    }
 }
