@@ -14,6 +14,7 @@ private int clock; //inicializacion de variable de tiempo lamport
  }
  //metodo para actualizar el reloj despues de recibir un evento
  public synchronized void update(int receivedTime) {
+  //actualiza el tiempo de lamport tomando el maximo entre el tiempo actual y el recibido y agrega 1
    this.clock = Math.max(this.clock, receivedTime) + 1;
  }
  //metodo para obtener el tiempo actual del reloj
@@ -22,8 +23,8 @@ private int clock; //inicializacion de variable de tiempo lamport
  }
  //metodo para probar la funcionalidad del reloj
  public static void main(String[] args) {
-   List<Thread> threads = new ArrayList<>();
-   LamportClock clock = new LamportClock();
+   List<Thread> threads = new ArrayList<>(); //lista para almacenar los hilos
+   LamportClock clock = new LamportClock(); //crea una instancia del reloj de lamport
   //creacion de hilos para simular eventos concurrentes
    for (int i = 0; i < 5; i++) {
      Thread thread = new Thread(new Runnable() {
