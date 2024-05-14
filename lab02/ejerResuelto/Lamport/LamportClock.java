@@ -31,31 +31,31 @@ private int clock;
      public void run() {
      //simular la creacion de un evento con un tiempo de lamport asociado
      int time = clock.tick();
-System.out.println("Thread " + Thread.currentThread().getId() + " created event with Lamport time " + time);
- try {
-   //simular una espera aleatoria entre la creacion y recepción del evento
- Thread.sleep((long) (Math.random() * 1000));
- } catch (InterruptedException e) {
- e.printStackTrace();
- }
-  //simular la recepción del evento y actualizar el reloj 
-int receivedTime = clock.tick();
-System.out.println("Thread " + Thread.currentThread().getId() + " received event with Lamport time " + receivedTime);
- clock.update(receivedTime);
- }
-});
- threads.add(thread);
- thread.start();
+     System.out.println("Thread " + Thread.currentThread().getId() + " created event with Lamport time " + time);
+       try {
+       //simular una espera aleatoria entre la creacion y recepción del evento
+        Thread.sleep((long) (Math.random() * 1000));
+        } catch (InterruptedException e) {
+        e.printStackTrace();
+        }
+     //simular la recepción del evento y actualizar el reloj 
+      int receivedTime = clock.tick();
+      System.out.println("Thread " + Thread.currentThread().getId() + " received event with Lamport time " + receivedTime);
+     clock.update(receivedTime);
+    }
+  });
+  threads.add(thread);
+  thread.start();
  }
   //esperar a que todos los hilos terminen su ejecución
  for (Thread thread : threads) {
-  try {
- thread.join();
- } catch (InterruptedException e) {
- e.printStackTrace();
- }
- }
-  //imprimir el tiempo final del reloj despues que todos los eventos hayan ocurrido
- System.out.println("Final Lamport time: " + clock.getTime());
+     try {
+     thread.join();
+     } catch (InterruptedException e) {
+     e.printStackTrace();
+     }
+  }
+    //imprimir el tiempo final del reloj despues que todos los eventos hayan ocurrido
+   System.out.println("Final Lamport time: " + clock.getTime());
  }
 }
