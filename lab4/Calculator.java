@@ -1,17 +1,21 @@
-import java.rmi.Remote;
-import java.rmi.RemoteException;
-
 // Definición de la interfaz remota para el servicio de calculadora.
-public interface Calculator extends Remote {
+// Esta interfaz extiende java.rmi.Remote para indicar que sus métodos pueden ser llamados desde otra JVM.
+public interface Calculator extends java.rmi.Remote {
+
     // Método para sumar dos números.
-    int add(int a, int b) throws RemoteException;
-    
+    // Debe declarar RemoteException para manejar posibles problemas de comunicación en RMI.
+    public int add(int a, int b) throws java.rmi.RemoteException;
+
     // Método para restar dos números.
-    int sub(int a, int b) throws RemoteException;
-    
+    // También debe declarar RemoteException.
+    public int sub(int a, int b) throws java.rmi.RemoteException;
+
     // Método para multiplicar dos números.
-    int mul(int a, int b) throws RemoteException;
-    
+    // Declaración de RemoteException requerida.
+    public int mul(int a, int b) throws java.rmi.RemoteException;
+
     // Método para dividir dos números.
-    int div(int a, int b) throws RemoteException;
+    // La declaración de RemoteException es necesaria.
+    public int div(int a, int b) throws java.rmi.RemoteException;
 }
+
