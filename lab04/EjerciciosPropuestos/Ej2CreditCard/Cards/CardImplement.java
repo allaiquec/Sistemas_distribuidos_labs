@@ -6,10 +6,10 @@ import java.util.ArrayList; // Implementación de lista dinámica
 import java.util.HashMap; // Implementación de tabla hash
 import java.util.List; // Interfaz de lista
 import java.util.Map; // Interfaz de mapa
-
+// Clase que extiende UnicastRemoteObject e implementa CardInterface
 public class CardImplement extends UnicastRemoteObject implements CardInterface {
     private double saldo;
-    
+    // Mapa para almacenar precios de productos
     private Map<String, Double> preciosProductos;
 
 
