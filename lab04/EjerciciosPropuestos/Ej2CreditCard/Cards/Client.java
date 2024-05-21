@@ -1,8 +1,8 @@
 package Cards;
 
-import java.rmi.Naming;
-import java.util.List;
-import java.util.Scanner;
+import java.rmi.Naming; // Para registrar y buscar objetos remotos
+import java.util.List; // Para trabajar con listas
+import java.util.Scanner; // Para entrada de usuario desde la consola
 
 public class Client {
     public static void main(String[] args) {
