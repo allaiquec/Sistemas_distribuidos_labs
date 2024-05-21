@@ -1,11 +1,11 @@
 package Cards;
 
-import java.rmi.RemoteException;
-import java.rmi.server.UnicastRemoteObject;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.rmi.RemoteException; // Excepción para métodos remotos
+import java.rmi.server.UnicastRemoteObject;  // Soporte para objetos remotos unicast
+import java.util.ArrayList; // Implementación de lista dinámica
+import java.util.HashMap; // Implementación de tabla hash
+import java.util.List; // Interfaz de lista
+import java.util.Map; // Interfaz de mapa
 
 public class CardImplement extends UnicastRemoteObject implements CardInterface {
     private double saldo;
