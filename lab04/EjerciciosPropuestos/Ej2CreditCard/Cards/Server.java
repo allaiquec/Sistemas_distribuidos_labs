@@ -1,6 +1,6 @@
 package Cards;
 
-import java.rmi.Naming;
+import java.rmi.Naming; // Clase para registrar y buscar objetos remotos
 
 public class Server {
     public static void main(String[] args) {
